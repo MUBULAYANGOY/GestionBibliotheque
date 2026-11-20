@@ -1,0 +1,5 @@
+ISBN001;L'Étranger;Albert Camus;true
+ISBN002;1984;George Orwell;true
+ISBN003;Le Petit Prince;Antoine de Saint-Exupéry;true
+ISBN004;Clean Code;Robert C. Martin;true
+fds0001;Force du silence;Robert sarah;true

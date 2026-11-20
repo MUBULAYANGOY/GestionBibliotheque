@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Java: compiler le projet",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "-encoding",
+                "UTF-8",
+                "-d",
+                "${workspaceFolder}/out",
+                "${workspaceFolder}/src/*.java"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Java: compiler et executer",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "javac -encoding UTF-8 -d '${workspaceFolder}/out' '${workspaceFolder}/src/*.java'; if ($LASTEXITCODE -eq 0) { java -cp '${workspaceFolder}/out' Main }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOrder": "sequence",
+            "problemMatcher": [],
+            "detail": "Compile puis lance la classe Main"
+        },
+        {
+            "label": "Java: executer Main",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "-cp",
+                "${workspaceFolder}/out",
+                "Main"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Execute le programme deja compile"
+        }
+    ]
+}
